@@ -3,7 +3,7 @@ import { useState } from "react";
 import ThemeController from "./ThemeController";
 
 const navItems = [
-  { name: "about", href: "#hero" },
+  { name: "about", href: "#about" },
   { name: "skill", href: "#skill" },
   { name: "services", href: "#services" },
   { name: "portfolio", href: "#portfolio" },
