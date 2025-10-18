@@ -1,0 +1,106 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+  exclude: rootscrollgutter, rootcolor;
+}
+
+/* Dark MODE */
+@plugin "daisyui/theme" {
+  name: "dark";
+  prefersdark: true;
+  --color-base-100: #172346; /*Fade Color 1*/
+  --color-base-200: #283b81; /*Fade Color 2*/
+  --color-base-300: #3c5ac8; /*Fade Color 3*/
+
+  --color-neutral-content: #f7f9fc; /*Blanquito*/ /*Se usa para las letras alternando modos*/
+
+  --color-info-content: #273772; /*Azul de las cajas*/
+  --color-primary: #ff9f1c; /*Naranjita*/
+}
+
+/* Light MODE */
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+
+  --color-neutral-content: #141c3a; /*Negro*/ /*Se usa para las letras alternando modos*/
+  --color-primary: #ff9f1c;
+
+  --color-info-content: #f7f9fc; /*Azul de las cajas*/
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat/MontserratAlternates-ExtraLight.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat/MontserratAlternates-Light.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat/MontserratAlternates-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Merriweather";
+  src: url("../assets/fonts/Merriweather/MerriweatherSans-Light.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Merriweather";
+  src: url("../assets/fonts/Merriweather/MerriweatherSans-Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+
+  @media (width >= 640px) {
+    max-width: 640px;
+  }
+  @media (width >= 768px) {
+    max-width: 768px;
+  }
+  @media (width >= 1024px) {
+    max-width: 1024px;
+  }
+  @media (width >= 1280px) {
+    max-width: 1280px;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
