@@ -2,8 +2,28 @@ import React, { useEffect, useState } from "react";
 
 function ThemeController() {
   const THEMES = { on: "dark", off: "light" };
+
+  const getInitialTheme = (): string => {
+    try {
+      const stored = localStorage.getItem("theme");
+      if (stored) return stored;
+
+      const prefersDark =
+        typeof window !== "undefined" &&
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      const initial = prefersDark ? THEMES.on : THEMES.off;
+      localStorage.setItem("theme", initial);
+      return initial;
+    } catch (e) {
+      // en caso de bloqueo de acceso a localStorage, fallback a dark
+      return THEMES.on;
+    }
+  };
+
   const [theme, setTheme] = useState<string>(() => {
-    return localStorage.getItem("theme") || THEMES.off;
+    return getInitialTheme();
   });
 
   useEffect(() => {

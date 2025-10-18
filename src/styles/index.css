@@ -1,28 +1,19 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
-  exclude: rootscrollgutter, rootcolor;
 }
 
-/* Dark MODE */
-@plugin "daisyui/theme" {
-  name: "dark";
-  prefersdark: true;
+[data-theme="dark"] {
+  --color-neutral-content: #f7f9fc; /*Blanquito*/ /*Se usa para las letras alternando modos*/
+  --color-primary: #ff9f1c; /*Naranjita*/
+
+  --color-info-content: #273772; /*Azul de las cajas*/
+
   --color-base-100: #172346; /*Fade Color 1*/
   --color-base-200: #283b81; /*Fade Color 2*/
   --color-base-300: #3c5ac8; /*Fade Color 3*/
-
-  --color-neutral-content: #f7f9fc; /*Blanquito*/ /*Se usa para las letras alternando modos*/
-
-  --color-info-content: #273772; /*Azul de las cajas*/
-  --color-primary: #ff9f1c; /*Naranjita*/
 }
 
-/* Light MODE */
-@plugin "daisyui/theme" {
-  name: "light";
-  default: true;
-
+[data-theme="light"] {
   --color-neutral-content: #141c3a; /*Negro*/ /*Se usa para las letras alternando modos*/
   --color-primary: #ff9f1c;
 
