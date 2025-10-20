@@ -3,18 +3,17 @@ import { useState } from "react";
 import ThemeController from "./ThemeController";
 
 const navItems = [
-  { name: "about", href: "#about" },
-  { name: "skill", href: "#skill" },
-  { name: "services", href: "#services" },
+  { name: "about me", href: "#about" },
   { name: "portfolio", href: "#portfolio" },
+  { name: "services", href: "#services" },
   { name: "contact", href: "#contact" },
 ];
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <nav className="fixed w-full z-10 py-3">
-      <div className="container flex items-center justify-between">
+    <nav className="fixed w-full z-10 py-3 backdrop-filter md:backdrop-blur-lg bg-info-content md:bg-transparent border-white/50 border-b rounded-b-2xl shadow-white">
+      <div className="mx-10 flex items-center justify-between">
         <div className="flex gap-5 ">
           <a href="#hero">
             <Cat className="w-10 h-10 stroke-neutral-content" />
@@ -72,7 +71,7 @@ export const Navbar = () => {
           </div>
         </div>
         <div className="order-2 justify-center w-20">
-        <ThemeController/>
+          <ThemeController />
         </div>
       </div>
     </nav>

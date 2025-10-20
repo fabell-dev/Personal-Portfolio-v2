@@ -3,10 +3,10 @@
 }
 
 [data-theme="dark"] {
-  --color-neutral-content: #f7f9fc; /*Blanquito*/ /*Se usa para las letras alternando modos*/
+  --color-neutral-content: #f7f9fc;/*Se usa para las letras alternando modos*/
   --color-primary: #ff9f1c; /*Naranjita*/
 
-  --color-info-content: #273772; /*Azul de las cajas*/
+  --color-info-content: #141C3A; /*Cajas*/
 
   --color-base-100: #172346; /*Fade Color 1*/
   --color-base-200: #283b81; /*Fade Color 2*/
@@ -14,10 +14,14 @@
 }
 
 [data-theme="light"] {
-  --color-neutral-content: #141c3a; /*Negro*/ /*Se usa para las letras alternando modos*/
+  --color-neutral-content: #141c3a;/*Se usa para las letras alternando modos*/
   --color-primary: #ff9f1c;
 
-  --color-info-content: #f7f9fc; /*Azul de las cajas*/
+  --color-info-content: #f7f9fc; /*Cajas*/
+
+  --color-base-100: #FEFCFB; /*Fade Color 1*/
+  --color-base-200: #FEFCFB; /*Fade Color 2*/
+  --color-base-300: #FEFCFB ; /*Fade Color 3*/
 }
 
 @font-face {
@@ -73,25 +77,4 @@ body {
   padding: 0;
   margin: 0;
   text-align: center;
-}
-
-@utility container {
-  margin-inline: auto;
-  padding-inline: 2rem;
-
-  @media (width >= 640px) {
-    max-width: 640px;
-  }
-  @media (width >= 768px) {
-    max-width: 768px;
-  }
-  @media (width >= 1024px) {
-    max-width: 1024px;
-  }
-  @media (width >= 1280px) {
-    max-width: 1280px;
-  }
-  @media (width >= 1400px) {
-    max-width: 1400px;
-  }
 }
