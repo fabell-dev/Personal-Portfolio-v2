@@ -13,6 +13,7 @@ function App() {
       <NavBar />
       <HeroSection />
       <AboutMe />
+      <Test/>
       <Proyects />
       <Services />
       <Contact />
