@@ -21,20 +21,22 @@ function AboutMe() {
     <>
       <section
         id="about"
-        className="cursor-default text-neutral-content py-30 px-4 flex items-center place-content-center mt-10 md:gap-20 gap-3"
+        className="cursor-default text-neutral-content py-30 px-4
+        flex flex-col md:flex-row
+        items-center place-content-center mt-10 md:gap-10 sm:gap:5 gap-y-2"
       >
-        <div className=" w-100 h-90 bg-info-content/30 rounded-2xl relative text-balance text-left pl-10 md:shadow-[-5px_5px_5px_rgba(0,0,0,0.25)]">
-          <p className="text-5xl font-light absolute top-10 left-10">
+        <div className="md:w-100 md:h-90 w-80 h-65 relative bg-info-content/30 rounded-2xl text-balance text-left pl-10 md:shadow-[-5px_5px_5px_rgba(0,0,0,0.25)] flex">
+          <p className="md:text-5xl md:top-10 top-5 text-4xl font-light absolute  left-10">
             about me
           </p>
-          <p className="text-sm absolute top-30">
+          <p className="md:text-sm md:top-30 text-xs absolute top-20 ">
             I'm a 23 years old and junior front-end developer. I just finished
             my studies in computer engineering and am specializing in web
             development. During my studies, I participated in several web
             development projects and continue to study to become a true
             professional.
           </p>
-          <p className="text-sm absolute bottom-15">
+          <p className="md:text-sm md:bottom-15 text-xs absolute bottom-5">
             With a constant thirst for learning and a commitment to detail, I'm
             ready for my first professional opportunity.
           </p>

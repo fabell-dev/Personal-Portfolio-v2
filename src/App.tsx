@@ -13,9 +13,6 @@ function App() {
       <NavBar />
       <HeroSection />
       <AboutMe />
-      <Test/>
-      <Test/>
-      <Test/>
       <Proyects />
       <Services />
       <Contact />
