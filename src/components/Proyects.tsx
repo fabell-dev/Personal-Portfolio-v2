@@ -7,9 +7,6 @@ import typesrcypt from "../assets/icons/typescript.svg";
 import react from "../assets/icons/react.svg";
 import next from "../assets/icons/nextjs.svg";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
-//new
 import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 
@@ -101,7 +98,10 @@ function Proyects() {
               </div>
             </div>
           </div>
-          <button className="embla__prev w-10 h-10 order-1 self-center" onClick={scrollPrev}>
+          <button
+            className="embla__prev w-10 h-10 order-1 self-center"
+            onClick={scrollPrev}
+          >
             <svg className="" viewBox="0 0 532 532">
               <path
                 fill="currentColor"
@@ -109,7 +109,10 @@ function Proyects() {
               />
             </svg>
           </button>
-          <button className="embla__next w-10 h-10 order-3 self-center" onClick={scrollNext}>
+          <button
+            className="embla__next w-10 h-10 order-3 self-center"
+            onClick={scrollNext}
+          >
             <svg className="embla__button__svg" viewBox="0 0 532 532">
               <path
                 fill="currentColor"
