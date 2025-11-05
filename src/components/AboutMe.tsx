@@ -27,7 +27,7 @@ function AboutMe() {
         flex flex-col md:flex-row
         items-center place-content-center md:mt-10 md:gap-5"
       >
-        <div className="md:w-100 md:h-90 w-80 h-60 bg-info-content/30 rounded-2xl text-balance text-center shadow-[-5px_5px_5px_rgba(0,0,0,0.25)] flex flex-col justify-center  items-center md:gap-y-10 gap-y-5">
+        <div className=" md:w-100 md:h-90 w-80 h-60 bg-info-content/30 rounded-2xl text-balance text-center shadow-[-5px_5px_5px_rgba(0,0,0,0.25)] flex flex-col justify-center  items-center md:gap-y-10 gap-y-5">
           <p className="md:text-5xl text-4xl font-light ">
             About me
           </p>

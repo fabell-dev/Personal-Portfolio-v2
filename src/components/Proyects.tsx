@@ -101,8 +101,8 @@ export default Proyects;
 
 export function Card(props: CardProps) {
   return (
-    <div className="flex flex-col border-neutral-content/80 border-1 w-50 rounded-xl ">
-      <p className="absolute self-center">{props.text}</p>
+    <div className="flex flex-col border-neutral-content/80 border-1 w-50 rounded-xl shadow-[-5px_5px_5px_rgba(0,0,0,0.25)]">
+      <p className="absolute self-center text-white">{props.text}</p>
       <img className="rounded-t-xl object-contain " src={props.image}></img>
       <div></div>
       <a className="my-5 mx-auto" href={props.ref}>
