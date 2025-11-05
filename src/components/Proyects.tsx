@@ -8,11 +8,8 @@ import react from "../assets/icons/react.svg";
 import next from "../assets/icons/nextjs.svg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-// import required modules
 import { Navigation } from "swiper/modules";
+
 
 function Proyects() {
   const proyects = {
@@ -119,8 +116,8 @@ export function Card(props: CardProps) {
       <div
         className={`grid grid-cols-${props.col} justify-items-center gap-2 mx-5 mb-5`}
       >
-        {props.skills.map((item) => (
-          <img className="object-contain" src={item}></img>
+        {props.skills.map((item,index) => (
+          <img key={index} className="object-contain" src={item} alt=""></img>
         ))}
       </div>
     </div>
@@ -130,7 +127,7 @@ export function Card(props: CardProps) {
 interface CardProps {
   image: string;
   ref: string;
-  col: Number;
+  col: number;
   text?: string;
-  skills: Array<string>;
+  skills: string[];
 }
