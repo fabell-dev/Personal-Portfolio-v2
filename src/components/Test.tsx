@@ -1,14 +1,44 @@
+import { useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 
-type Props = {}
+export const Test = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel();
 
-function Test({} : Props) {
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
   return (
-    <>
-     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam iure corrupti laudantium, aliquid, alias, ea quibusdam sunt molestiae quo quae exercitationem reiciendis omnis explicabo quasi quaerat? Harum fuga repudiandae dignissimos. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minima saepe animi! Sed beatae recusandae quis odio neque dolore veritatis suscipit! Alias, soluta! Corporis id sit perspiciatis est eius dolores? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum fuga voluptatem dolor quibusdam accusantium reiciendis quo recusandae consectetur, nostrum, quod rem aliquid qui deleniti vel tempora quaerat sint sequi. Quo.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam iure corrupti laudantium, aliquid, alias, ea quibusdam sunt molestiae quo quae exercitationem reiciendis omnis explicabo quasi quaerat? Harum fuga repudiandae dignissimos. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minima saepe animi! Sed beatae recusandae quis odio neque dolore veritatis suscipit! Alias, soluta! Corporis id sit perspiciatis est eius dolores? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum fuga voluptatem dolor quibusdam accusantium reiciendis quo recusandae consectetur, nostrum, quod rem aliquid qui deleniti vel tempora quaerat sint sequi. Quo.
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam iure corrupti laudantium, aliquid, alias, ea quibusdam sunt molestiae quo quae exercitationem reiciendis omnis explicabo quasi quaerat? Harum fuga repudiandae dignissimos. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur minima saepe animi! Sed beatae recusandae quis odio neque dolore veritatis suscipit! Alias, soluta! Corporis id sit perspiciatis est eius dolores? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum fuga voluptatem dolor quibusdam accusantium reiciendis quo recusandae consectetur, nostrum, quod rem aliquid qui deleniti vel tempora quaerat sint sequi. Quo.
-     </p>
-    </>
-)
-}
-export default Test
+    <div className="embla">
+      <div className="embla__viewport" ref={emblaRef}>
+        <div className="embla__container">
+          <div className="embla__slide">Slide 1</div>
+          <div className="embla__slide">Slide 2</div>
+          <div className="embla__slide">Slide 3</div>
+        </div>
+      </div>
+      <button className="embla__prev w-10 h-10" onClick={scrollPrev}>
+        <svg className="" viewBox="0 0 532 532">
+          <path
+            fill="currentColor"
+            d="M355.66 11.354c13.793-13.805 36.208-13.805 50.001 0 13.785 13.804 13.785 36.238 0 50.034L201.22 266l204.442 204.61c13.785 13.805 13.785 36.239 0 50.044-13.793 13.796-36.208 13.796-50.002 0a5994246.277 5994246.277 0 0 0-229.332-229.454 35.065 35.065 0 0 1-10.326-25.126c0-9.2 3.393-18.26 10.326-25.2C172.192 194.973 332.731 34.31 355.66 11.354Z"
+          />
+        </svg>
+      </button>
+      <button className="embla__next w-10 h-10" onClick={scrollNext}>
+        <svg className="embla__button__svg" viewBox="0 0 532 532">
+          <path
+            fill="currentColor"
+            d="M176.34 520.646c-13.793 13.805-36.208 13.805-50.001 0-13.785-13.804-13.785-36.238 0-50.034L330.78 266 126.34 61.391c-13.785-13.805-13.785-36.239 0-50.044 13.793-13.796 36.208-13.796 50.002 0 22.928 22.947 206.395 206.507 229.332 229.454a35.065 35.065 0 0 1 10.326 25.126c0 9.2-3.393 18.26-10.326 25.2-45.865 45.901-206.404 206.564-229.332 229.52Z"
+          />
+        </svg>
+      </button>
+    </div>
+  );
+};
+
+export default Test;

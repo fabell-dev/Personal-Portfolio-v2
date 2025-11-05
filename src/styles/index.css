@@ -1,14 +1,14 @@
 @import "tailwindcss";
-@import 'swiper/css';
-@import 'swiper/css/navigation';
+@import "swiper/css";
+@import "swiper/css/navigation";
 @plugin "daisyui" {
 }
 
 [data-theme="dark"] {
-  --color-neutral-content: #f7f9fc;/*Se usa para las letras alternando modos*/
+  --color-neutral-content: #f7f9fc; /*Se usa para las letras alternando modos*/
   --color-primary: #ff9f1c; /*Naranjita*/
 
-  --color-info-content: #141C3A; /*Cajas*/
+  --color-info-content: #141c3a; /*Cajas*/
 
   --color-base-100: #172346; /*Fade Color 1*/
   --color-base-200: #283b81; /*Fade Color 2*/
@@ -16,14 +16,14 @@
 }
 
 [data-theme="light"] {
-  --color-neutral-content: #141c3a;/*Se usa para las letras alternando modos*/
+  --color-neutral-content: #141c3a; /*Se usa para las letras alternando modos*/
   --color-primary: #ff9f1c;
 
   --color-info-content: #f7f9fc; /*Cajas*/
 
-  --color-base-100: #FEFCFB; /*Fade Color 1*/
-  --color-base-200: #FEFCFB; /*Fade Color 2*/
-  --color-base-300: #FEFCFB ; /*Fade Color 3*/
+  --color-base-100: #fefcfb; /*Fade Color 1*/
+  --color-base-200: #fefcfb; /*Fade Color 2*/
+  --color-base-300: #fefcfb; /*Fade Color 3*/
 }
 
 @font-face {
@@ -79,4 +79,15 @@ body {
   padding: 0;
   margin: 0;
   text-align: center;
+}
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }

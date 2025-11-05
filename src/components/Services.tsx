@@ -3,10 +3,10 @@ function Services() {
   return (
     <>
       <section id="services" className="pt-20">
-        <p className="mb-10 md:text-5xl text-4xl font-light">Services</p>
+        <p className="mb-10 md:text-5xl text-4xl font-light cursor-default">Services</p>
         <div className="flex flex-col md:flex-row md:justify-center items-center md:gap-20">
           <div className="flex items-center md:gap-20 bg-info-content/30 w-80 h-50 md:w-100 md:h-80 rounded-2xl shadow-[-5px_5px_5px_rgba(0,0,0,0.25)]">
-            <p className="md:text-xl md:mx-5 text-sm mx-2">
+            <p className="md:text-xl md:mx-5 text-sm mx-2 cursor-default">
               I offer{" "}
               <strong className="text-primary">
                 {" "}
