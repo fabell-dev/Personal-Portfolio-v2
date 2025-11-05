@@ -12,11 +12,11 @@ const navItems = [
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <nav className="fixed w-full z-10 py-3 backdrop-filter md:backdrop-blur-lg bg-info-content md:bg-transparent border-white/50 border-b rounded-b-2xl shadow-white">
+    <nav className="fixed w-full z-10 py-3 backdrop-filter md:backdrop-blur-lg bg-info-content md:bg-transparent border-neutral-content/50 border-b rounded-b-2xl shadow-white">
       <div className="mx-10 flex items-center justify-between">
         <div className="flex gap-5 ">
           <a href="#hero">
-            <Cat className="w-10 h-10 stroke-neutral-content" />
+            <Cat className="hover:scale-115 transition-scale duration-150 w-10 h-10 stroke-neutral-content" />
           </a>
 
           <p className="text-2xl text-neutral-content font-bold flex items-center cursor-default">

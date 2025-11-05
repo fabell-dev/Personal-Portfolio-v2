@@ -5,7 +5,7 @@ import Proyects from "./components/Proyects";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 
-import Test from "./components/Test";
+import Test from "./components/Test"
 
 function App() {
   return (
@@ -13,9 +13,9 @@ function App() {
       <NavBar />
       <HeroSection />
       <AboutMe />
-      <Test/>
       <Proyects />
-      <Services />
+      {/* <Services /> */}
+      <Test/>
       <Contact />
     </>
   );

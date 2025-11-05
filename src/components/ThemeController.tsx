@@ -37,7 +37,7 @@ function ThemeController() {
 
   return (
     <>
-        <label className="swap swap-rotate">
+        <label className="swap swap-rotate hover:scale-115 transition-scale duration-150">
           <input
             type="checkbox"
             className="theme-controller "

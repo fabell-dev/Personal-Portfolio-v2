@@ -23,13 +23,13 @@ function AboutMe() {
     <>
       <section
         id="about"
-        className="cursor-default text-neutral-content md:py-30 py-20 px-4
+        className="cursor-default text-neutral-content pt-20 px-4
         flex flex-col md:flex-row
         items-center place-content-center md:mt-10 md:gap-5"
       >
-        <div className="md:w-100 md:h-90 w-80 h-50 bg-info-content/30 rounded-2xl text-balance text-center md:shadow-[-5px_5px_5px_rgba(0,0,0,0.25)] flex flex-col justify-center  items-center md:gap-y-10 gap-y-5">
-          <p className="md:text-5xl text-4xl font-light">
-            about me
+        <div className="md:w-100 md:h-90 w-80 h-60 bg-info-content/30 rounded-2xl text-balance text-center shadow-[-5px_5px_5px_rgba(0,0,0,0.25)] flex flex-col justify-center  items-center md:gap-y-10 gap-y-5">
+          <p className="md:text-5xl text-4xl font-light ">
+            About me
           </p>
           <p className="md:text-[16px] md:mx-5 text-xs mx-2">
             I'm a 23 years old and junior front-end developer. I just finished
@@ -45,8 +45,8 @@ function AboutMe() {
         </div>
 
         <div className="md:w-100 md:h-90 w-80 h-60  flex flex-col box-border justify-between md:justify-normal md:gap-y-20">
-          <p className="md:text-5xl md:mt-5 text-4xl font-light  mt-10">
-            my skills
+          <p className="md:text-5xl md:mt-5 text-4xl font-light my-10 md:my-0">
+            My skills
           </p>
           <div
             className="w-80 md:w-100 grid grid-cols-4 grid-rows-2 justify-items-center gap-y-5 md:gap-y-10"
