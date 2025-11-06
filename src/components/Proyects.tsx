@@ -69,7 +69,7 @@ function Proyects() {
 
         {/* Moviles */}
         <div className="flex self-center md:hidden">
-          <div className="embla w-80 order-2 ">
+          <div className="embla w-70 order-2 ">
             <div className="embla__viewport" ref={emblaRef}>
               <div className="embla__container">
                 <Card
@@ -132,7 +132,7 @@ export default Proyects;
 export function Card(props: CardProps) {
   return (
     <div
-      className={`${props.class} mx-10 my-5 flex flex-col border-neutral-content/50 border-2 w-80 rounded-xl shadow-[-5px_5px_5px_rgba(0,0,0,0.25)]`}
+      className={`${props.class} mx-10 my-5 flex flex-col border-neutral-content/50 border-2 w-70 md:w-50 rounded-xl shadow-[-5px_5px_5px_rgba(0,0,0,0.25)]`}
     >
       <p className="absolute self-center text-white cursor-default">
         {props.text}
