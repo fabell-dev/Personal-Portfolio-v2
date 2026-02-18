@@ -1,10 +1,11 @@
 import { Menu, X, Cat } from "lucide-react";
 import { useState, useEffect } from "react";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import ThemeController from "./ThemeController";
 
 const navItems = [
   { name: "about me", href: "#about" },
+  { name: "skills", href: "#skills" },
   { name: "portfolio", href: "#portfolio" },
   { name: "services", href: "#services" },
   { name: "contact", href: "#contact" },
@@ -17,7 +18,7 @@ export default function Navbar() {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: "-50% 0px -50% 0px",
+      rootMargin: "-30% 0px -30% 0px",
       threshold: 0,
     };
 
@@ -73,14 +74,17 @@ export default function Navbar() {
               transition={{ duration: 0.3 }}
             >
               {item.name}
-              <motion.div
-                className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: activeSection === item.href.slice(1) ? 1 : 0,
-                }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-              />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: activeSection === item.href.slice(1) ? 1 : 0,
+                  }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.1, ease: "easeInOut" }}
+                />
+              </AnimatePresence>
             </motion.a>
           ))}
         </div>

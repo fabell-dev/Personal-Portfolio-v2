@@ -48,7 +48,7 @@ export default function Proyects() {
   return (
     <>
       <section id="portfolio" className="pt-20 flex flex-col">
-        <p className="mb-10 text-4xl md:text-5xl font-light cursor-default">
+        <p className="mb-10 text-4xl md:text-5xl cursor-default font-[Montserrat] font-bold lowercase">
           My Works
         </p>
 
@@ -105,7 +105,9 @@ export default function Proyects() {
 
 export function Card(props: CardProps) {
   return (
-    <div
+    <motion.div
+      initial={{ scale: 1 }}
+      whileHover={{ scale: 1.1 }}
       className={`${props.class} mx-10 my-5 flex flex-col border-neutral-content/50 border-2 w-70 md:w-50 rounded-xl shadow-[-5px_5px_5px_rgba(0,0,0,0.25)]`}
     >
       <p className="absolute self-center text-white cursor-default">
@@ -135,7 +137,7 @@ export function Card(props: CardProps) {
           <img key={index} className="object-contain" src={item} alt=""></img>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
