@@ -1,5 +1,5 @@
 import { MapPin, Phone, AtSign } from "lucide-react";
-function Contact() {
+export default function Contact() {
   return (
     <>
       <section
@@ -13,8 +13,10 @@ function Contact() {
               <AtSign />
               <h2 className="text-2xl">email</h2>
             </div>
-            <a className="font-bold text-center md:text-left">ojeafabian66@gmail.com</a>
-          </div >
+            <a className="font-bold text-center md:text-left">
+              ojeafabian66@gmail.com
+            </a>
+          </div>
           <div className="self-center md:self-start flex flex-col">
             <div className="flex items-center self-center md:self-start gap-x-2 mb-1">
               <Phone />
@@ -33,7 +35,10 @@ function Contact() {
         <div className="bg-info-content/50 flex flex-col w-80 md:w-100 h-70 md:h-90 rounded-2xl justify-evenly sm:mr-5">
           <p className="text-2xl md:text-4xl">Contact With Me</p>
           <form className="flex flex-col">
-            <label htmlFor="mail" className="self-baseline ml-5 mb-2 md:text-xl">
+            <label
+              htmlFor="mail"
+              className="self-baseline ml-5 mb-2 md:text-xl"
+            >
               Email
             </label>
             <input
@@ -60,4 +65,3 @@ function Contact() {
     </>
   );
 }
-export default Contact;

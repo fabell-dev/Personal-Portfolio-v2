@@ -1,7 +1,7 @@
 import profilephoto from "../assets/img/test.png";
 import { Github, Linkedin } from "lucide-react";
 
-function HeroSection() {
+export default function HeroSection() {
   return (
     <section
       id="hero"
@@ -53,4 +53,3 @@ function HeroSection() {
     </section>
   );
 }
-export default HeroSection;

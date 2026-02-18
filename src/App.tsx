@@ -5,18 +5,20 @@ import Proyects from "./components/Proyects";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 
-import Test from "./components/Test"
+import Test from "./components/Test";
+import { DominosLink } from "./components/Dominos";
 
 function App() {
   return (
     <>
-      <NavBar />
+      {/* <NavBar />
       <HeroSection />
       <AboutMe />
       <Proyects />
       <Services />
-      <Contact />
-      <Test/>
+      <Contact /> */}
+      <Test />
+      {/* <DominosLink /> */}
     </>
   );
 }

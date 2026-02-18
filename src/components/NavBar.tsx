@@ -9,7 +9,7 @@ const navItems = [
   { name: "contact", href: "#contact" },
 ];
 
-export const Navbar = () => {
+export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <nav className="fixed w-full z-10 py-3 backdrop-filter md:backdrop-blur-lg bg-info-content md:bg-transparent border-neutral-content/50 border-b rounded-b-2xl shadow-white">
@@ -76,6 +76,4 @@ export const Navbar = () => {
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}

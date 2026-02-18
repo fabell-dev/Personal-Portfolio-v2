@@ -9,10 +9,10 @@ import next from "../assets/icons/nextjs.svg";
 
 import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import ClassNames from 'embla-carousel-class-names'
+import ClassNames from "embla-carousel-class-names";
 
-function Proyects() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true },[ClassNames()]);
+export default function Proyects() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [ClassNames()]);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -126,8 +126,6 @@ function Proyects() {
     </>
   );
 }
-
-export default Proyects;
 
 export function Card(props: CardProps) {
   return (

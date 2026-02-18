@@ -6,7 +6,7 @@ import typesrcypt from "../assets/icons/typescript.svg";
 import react from "../assets/icons/react.svg";
 import next from "../assets/icons/nextjs.svg";
 
-function AboutMe() {
+export default function AboutMe() {
   const skills = [
     { category: "Frontend", name: "Html", img: html },
     { category: "Frontend", name: "Css", img: css },
@@ -58,4 +58,3 @@ function AboutMe() {
     </>
   );
 }
-export default AboutMe;
