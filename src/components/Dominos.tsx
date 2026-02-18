@@ -1,31 +1,20 @@
 import { motion } from "motion/react";
 
-export const DominosLink = () => {
-  return (
-    <section className="grid place-content-center gap-2 bg-green-300 px-8 py-24 text-black">
-      <FlipLink href="#">Twitter</FlipLink>
-      <FlipLink href="#">Linkedin</FlipLink>
-      <FlipLink href="#">Facebook</FlipLink>
-      <FlipLink href="#">Instagram</FlipLink>
-    </section>
-  );
-};
-
 const DURATION = 0.25;
 const STAGGER = 0.025;
 
-const FlipLink = ({ children, href }) => {
+export const DominosAnimated = ({ children }) => {
   return (
-    <motion.a
+    <motion.p
       initial="initial"
-      whileHover="hovered"
-      href={href}
-      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
+      animate="hovered"
+      className="relative block overflow-hidden whitespace-nowrap text-4xl font-black sm:text-7xl md:text-8xl lg:text-9xl"
       style={{
         lineHeight: 0.75,
+        wordSpacing: "0.05em",
       }}
     >
-      <div>
+      <div className="text-balance text-4xl md:text-6xl font-[Montserrat] font-bold">
         {children.split("").map((l, i) => (
           <motion.span
             variants={{
@@ -40,15 +29,18 @@ const FlipLink = ({ children, href }) => {
               duration: DURATION,
               ease: "easeInOut",
               delay: STAGGER * i,
+              repeat: Infinity,
+              repeatType: "reverse",
+              repeatDelay: 1.5,
             }}
             className="inline-block"
             key={i}
           >
-            {l}
+            {l === " " ? "\u00A0" : l}
           </motion.span>
         ))}
       </div>
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 text-balance text-4xl md:text-6xl font-[Montserrat] font-bold">
         {children.split("").map((l: string, i: number) => (
           <motion.span
             variants={{
@@ -63,14 +55,17 @@ const FlipLink = ({ children, href }) => {
               duration: DURATION,
               ease: "easeInOut",
               delay: STAGGER * i,
+              repeat: Infinity,
+              repeatType: "reverse",
+              repeatDelay: 1.5,
             }}
             className="inline-block"
             key={i}
           >
-            {l}
+            {l === " " ? "\u00A0" : l}
           </motion.span>
         ))}
       </div>
-    </motion.a>
+    </motion.p>
   );
 };

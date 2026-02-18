@@ -4,7 +4,7 @@ export default function Contact() {
     <>
       <section
         id="contact"
-        className="pt-20 flex flex-col md:flex-row items-center md:justify-center gap-10"
+        className="py-20 flex flex-col md:flex-row items-center md:justify-center gap-10 "
       >
         <div className="flex flex-col w-80 md:w-100 h-70 md:h-90 bg-info-content/50 md:bg-transparent rounded-2xl justify-evenly sm:ml-5">
           <p className="text-2xl md:text-4xl">Contact Information</p>

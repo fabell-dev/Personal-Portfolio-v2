@@ -1,5 +1,7 @@
 import profilephoto from "../assets/img/test.png";
 import { Github, Linkedin } from "lucide-react";
+import { DominosAnimated } from "./Dominos";
+import { motion } from "motion/react";
 
 export default function HeroSection() {
   return (
@@ -10,7 +12,7 @@ export default function HeroSection() {
       <div className="flex items-center place-content-center mt-10 md:gap-20 gap-3">
         <div className="">
           <p className="text-balance text-4xl md:text-6xl font-[Montserrat] font-bold">
-            Hi there!
+            <DominosAnimated> Hi there!</DominosAnimated>
           </p>
           <p className="text-xl md:text-2xl font-[Montserrat] font-light text-balance">
             i`m{" "}
@@ -22,14 +24,16 @@ export default function HeroSection() {
           <p className="text-xl md:text-2xl font-[Montserrat]  font-light">
             frontend developer.
           </p>
-          <button
-            className="btn btn-primary rounded-4xl text-neutral-content md:mt-5 mt-3 md:h-12 md:w-60 h-8 w-43  "
-            type="button"
+          <motion.button
+            className="btn btn-primary rounded-4xl text-neutral-content md:mt-5 mt-3 md:h-12 md:w-60 h-8 w-43"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.9, y: 1 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
             <a href="#portfolio" className="w-100% md:text-xl  text-balance">
               see my Works!
             </a>
-          </button>
+          </motion.button>
         </div>
 
         <div className="flex flex-col max-w-30 max-h-30 md:max-w-100 md:max-h-100">

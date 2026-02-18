@@ -21,7 +21,7 @@ export default function AboutMe() {
     <>
       <section
         id="about"
-        className="cursor-default text-neutral-content pt-20 px-4
+        className="cursor-default text-neutral-content pt-27 px-4
         flex flex-col md:flex-row
         items-center place-content-center md:mt-10 md:gap-5"
       >

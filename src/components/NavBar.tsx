@@ -1,5 +1,6 @@
 import { Menu, X, Cat } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion } from "motion/react";
 import ThemeController from "./ThemeController";
 
 const navItems = [
@@ -11,6 +12,36 @@ const navItems = [
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-50% 0px -50% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions,
+    );
+
+    // Observar las secciones
+    const sections = document.querySelectorAll("section[id]");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
   return (
     <nav className="fixed w-full z-10 py-3 backdrop-filter md:backdrop-blur-lg bg-info-content md:bg-transparent border-neutral-content/50 border-b rounded-b-2xl shadow-white">
       <div className="mx-10 flex items-center justify-between">
@@ -27,13 +58,30 @@ export default function Navbar() {
         {/* desktop nav */}
         <div className="hidden md:flex flex-2 justify-end space-x-8 text-neutral-content text-xl mr-5 ">
           {navItems.map((item, key) => (
-            <a
+            <motion.a
               key={key}
               href={item.href}
-              className="hover:text-primary transition-colors duration-300"
+              className={`hover:text-primary transition-colors duration-300 relative pb-1 ${
+                activeSection === item.href.slice(1) ? "text-primary" : ""
+              }`}
+              animate={{
+                color:
+                  activeSection === item.href.slice(1)
+                    ? "text-neutral-content"
+                    : "text-primary",
+              }}
+              transition={{ duration: 0.3 }}
             >
               {item.name}
-            </a>
+              <motion.div
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: activeSection === item.href.slice(1) ? 1 : 0,
+                }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+              />
+            </motion.a>
           ))}
         </div>
 
@@ -62,10 +110,20 @@ export default function Navbar() {
               <a
                 key={key}
                 href={item.href}
-                className=" hover:text-primary"
+                className={`hover:text-primary transition-colors duration-300 relative pb-1 ${
+                  activeSection === item.href.slice(1) ? "font-bold" : ""
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
+                {/* <motion.div
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: activeSection === item.href.slice(1) ? 1 : 0,
+                  }}
+                  transition={{ duration: 4, ease: "easeInOut" }}
+                /> */}
               </a>
             ))}
           </div>
