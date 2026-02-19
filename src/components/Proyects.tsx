@@ -30,7 +30,6 @@ export default function Proyects() {
       image: image,
       ref: "https://youtube.com",
     },
-    ,
     {
       skills: [html, js, next, typesrcypt],
       name: "Proyecto 2",
