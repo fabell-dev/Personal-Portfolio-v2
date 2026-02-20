@@ -1,40 +1,47 @@
 # Personal Portfolio [![Development]([https://img.shields.io/badge/status-en%20desarrollo-blue](https://fabell-dev-portfolio.vercel.app/))]()
-![Uploading Portfolio.png…]()
+![Descripción](src/assets/img/Repo/Portfolio.png)
 
 
-## 📋 Índice
-- [Descripción](#descripción)
-- [Características](#características)
-- [Tecnologías](#tecnologías)
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Contribuir](#contribuir)
-- [Licencia](#licencia)
+## 📋 Table of Contents
+- [Description](#description)
+- [Features](#features)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Descripción
-Breve overview: Este proyecto [qué hace], resuelve [problema]. Desarrollado con [tus skills: React, Django, Docker].
+## Description
+A modern, responsive personal portfolio website showcasing my journey as a full-stack developer from Cuba. Built with React and Vite for blazing-fast performance, this site highlights my expertise in web development, DevOps, Linux systems administration, and streaming technologies. Deployed and optimized for production.
 
-## ✨ Características
-- Feature 1: Descripción.
-- Feature 2: Incluyendo CI/CD con GitHub Actions.
+Designed to demonstrate my skills in React/TypeScript frontend, Django/Node.js backend, Docker/Kubernetes containerization, and CI/CD pipelines with GitHub Actions.
 
-## 🛠️ Tecnologías
-![Logo](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-- React, Node.js, Docker, Kubernetes.
+## ✨ Features
+- Fully responsive design optimized for mobile, tablet, and desktop
+- Smooth animations and modern UI with React components
+- Project showcase with live demos and GitHub links
+- Contact form integrated with email services
+- Dark/light mode toggle for better user experience
+- Fast loading times with Vite bundler and code splitting
+- SEO-optimized with meta tags and structured data
 
-## 🚀 Instalación
-1. Clona: `git clone https://github.com/tuusuario/proyecto.git`
-2. Entra: `cd proyecto`
-3. Instala: `npm install` o `docker-compose up -d`
+## 🛠️ Technologies
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-FD92AA?style=for-the-badge&logo=vite&logoColor=FFFFFF)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=FFFFFF)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=FFFFFF)
+![DaisyUI](https://img.shields.io/badge/DaisyUI-0FCF6C?style=for-the-badge&logo=daisyui&logoColor=FFFFFF)
+![EmailJS](https://img.shields.io/badge/EmailJS-F15A24?style=for-the-badge&logo=emailjs&logoColor=FFFFFF)
 
-## 💻 Uso
-Ejecuta `npm start` y accede a `localhost:3000`.
+**Frontend:** React 19.2.4, Vite 7.3.1, TypeScript 5.9.3
+**Styling:** TailwindCSS 4.1.18, DaisyUI 5.5.18
+**UI/Animations:** Motion 12.34.0, Lucide React 0.546.0
+**Carousel:** Embla Carousel 8.6.0 (React + Class Names)
+**Contact:** EmailJS 4.4.1
+**Dev Tools:** ESLint 9.39.2, @vitejs/plugin-react 5.1.4
 
-## 🤝 Contribuir
-1. Forkea el repo.
-2. Crea rama: `git checkout -b feature/nueva-funcion`.
-3. Commit: `git commit -m "Agrega función"`.
-4. Push y PR.
 
-## 📄 Licencia
-MIT License - ver [LICENSE](LICENSE).
+## 🚀 Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/fabell-dev/Personal-Portfolio-v2.git
