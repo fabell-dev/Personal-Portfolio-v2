@@ -1,6 +1,32 @@
 import { MapPin, Phone, AtSign } from "lucide-react";
 import { motion } from "motion/react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
 export default function Contact() {
+  const formRef = useRef<HTMLFormElement | null>(null);
+  const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">(
+    "idle",
+  );
+  const sendEmail = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    setStatus("sending");
+
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+      );
+      setStatus("ok");
+      formRef.current.reset();
+    } catch (err) {
+      console.error(err);
+      setStatus("error");
+    }
+  };
   return (
     <>
       <section
@@ -37,7 +63,21 @@ export default function Contact() {
           <p className="text-2xl md:text-4xl font-[Montserrat] font-bold lowercase">
             Contact With Me
           </p>
-          <form className="flex flex-col">
+          <form className="flex flex-col" ref={formRef} onSubmit={sendEmail}>
+            <label
+              htmlFor="name"
+              className="self-baseline ml-5 mb-2 md:text-xl"
+            >
+              Name{" "}
+            </label>
+            <input
+              className="bg-white rounded-xs text-info-content w-70 md:w-90 self-center h-8 pl-2"
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Jhon Doe"
+              required
+            />
             <label
               htmlFor="mail"
               className="self-baseline ml-5 mb-2 md:text-xl"
@@ -46,6 +86,8 @@ export default function Contact() {
             </label>
             <input
               className="bg-white rounded-xs text-info-content w-70 md:w-90 self-center h-8 pl-2"
+              name="email"
+              required
               id="mail"
               type="email"
               placeholder="jhondoe@gmail.com"
@@ -57,17 +99,26 @@ export default function Contact() {
               className="bg-white rounded-xs text-info-content w-70 md:w-90 self-center h-16 pl-2"
               id="message"
               type="text"
+              name="message"
+              required
               placeholder="Write a Message"
             ></input>
-            <motion.input
+            <motion.button
               className="btn btn-primary rounded-4xl text-neutral-content md:mt-5 mt-3 md:h-12 md:w-60 h-8 w-43 self-center"
-              // className="bg-primary rounded-2xl w-70 self-center mt-5 h-8 md:h-10 md:text-xl "
+              disabled={status === "sending"}
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.9, y: 1 }}
               transition={{ type: "spring", stiffness: 300, damping: 15 }}
               type="submit"
-              value="Stay conected"
-            ></motion.input>
+            >
+              {status === "sending"
+                ? "Sending..."
+                : status === "ok"
+                  ? "Email Sent!"
+                  : status === "error"
+                    ? "Try Again"
+                    : "Send"}
+            </motion.button>
           </form>
         </div>
       </section>
