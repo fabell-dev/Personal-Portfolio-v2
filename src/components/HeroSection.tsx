@@ -1,4 +1,4 @@
-import profilephoto from "../assets/img/test.png";
+import profilephoto from "../assets/img/ProfilePicture.png";
 import { Github, Linkedin } from "lucide-react";
 import { DominosAnimated } from "./Dominos";
 import { motion } from "motion/react";
@@ -36,11 +36,11 @@ export default function HeroSection() {
           </motion.button>
         </div>
 
-        <div className="flex flex-col max-w-30 max-h-30 md:max-w-100 md:max-h-100">
-          <div>
+        <div className="flex flex-col items-center md:max-w-100 md:max-h-100">
+          <div className="w-30 h-30 md:w-50 md:h-50 flex items-center justify-center">
             <img
               src={profilephoto}
-              className="object-contain md:w-50 md:h-50 rounded-full md:shadow-[30px_0_0px_rgba(0,0,0,0.25)] shadow-[10px_0_30px_rgba(0,0,0,0.25)] shadow-black-500"
+              className="w-full h-full object-cover object-top rounded-full md:shadow-[30px_0_0px_rgba(0,0,0,0.25)] shadow-[10px_0_30px_rgba(0,0,0,0.25)] shadow-black-500"
             ></img>
           </div>
 
