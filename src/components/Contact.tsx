@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-export default function Contact() {
+export function Contact() {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">(
     "idle",

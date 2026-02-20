@@ -1,9 +1,9 @@
-import profilephoto from "../assets/img/ProfilePicture.png";
+import profilephoto from "../assets/img/ProfilePicture.webp";
 import { Github, Linkedin } from "lucide-react";
 import { DominosAnimated } from "./Dominos";
 import { motion } from "motion/react";
 
-export default function HeroSection() {
+export function HeroSection() {
   return (
     <section
       id="hero"

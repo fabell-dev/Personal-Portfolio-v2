@@ -1,4 +1,4 @@
-export default function AboutMe() {
+export function AboutMe() {
   return (
     <>
       <section

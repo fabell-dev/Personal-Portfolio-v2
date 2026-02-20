@@ -1,10 +1,13 @@
-import NavBar from "./components/NavBar";
-import HeroSection from "./components/HeroSection";
-import AboutMe from "./components/AboutMe";
-import Skills from "./components/Skills";
-import Proyects from "./components/Proyects";
-import Services from "./components/Services";
-import Contact from "./components/Contact";
+import {
+  NavBar,
+  HeroSection,
+  AboutMe,
+  Skills,
+  Proyects,
+  Services,
+  Contact,
+  Footer,
+} from "./components";
 
 import { useEffect } from "react";
 import emailjs from "@emailjs/browser";
@@ -21,7 +24,8 @@ function App() {
       <Skills />
       <Proyects />
       <Services />
-      <Contact />\
+      <Contact />
+      <Footer />
     </>
   );
 }

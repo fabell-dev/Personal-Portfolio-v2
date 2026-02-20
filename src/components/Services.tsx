@@ -1,5 +1,5 @@
-import test from "../assets/img/test.png";
-export default function Services() {
+import test from "../assets/img/Repo/Portfolio.png";
+export function Services() {
   return (
     <>
       <section
@@ -12,9 +12,8 @@ export default function Services() {
         <div className="flex flex-col md:flex-row md:justify-center items-center md:gap-20">
           <div className="flex items-center md:gap-20 bg-info-content/30 w-80 h-50 md:w-100 md:h-80 rounded-2xl shadow-[-5px_5px_5px_rgba(0,0,0,0.25)]">
             <p className="md:text-xl md:mx-5 text-sm mx-2 cursor-default">
-              I offer{" "}
+              I offer
               <strong className="text-primary">
-                {" "}
                 custom website development
               </strong>
               ,prioritazing clean, semantic code,optimized perfomance, and an

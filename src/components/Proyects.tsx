@@ -1,4 +1,4 @@
-import image from "../assets/img/test.png";
+import image from "../assets/img/Repo/Portfolio.png";
 import html from "../assets/icons/html.svg";
 import css from "../assets/icons/css.svg";
 import tailwind from "../assets/icons/tailwind.svg";
@@ -12,7 +12,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import ClassNames from "embla-carousel-class-names";
 import { motion } from "motion/react";
 
-export default function Proyects() {
+export function Proyects() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [ClassNames()]);
 
   const scrollPrev = useCallback(() => {

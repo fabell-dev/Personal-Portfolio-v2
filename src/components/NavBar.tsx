@@ -11,7 +11,7 @@ const navItems = [
   { name: "contact", href: "#contact" },
 ];
 
-export default function Navbar() {
+export function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
