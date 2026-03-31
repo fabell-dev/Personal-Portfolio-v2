@@ -158,22 +158,27 @@ Valor: cierre consistente y mejora de navegabilidad.
 ## Riesgos y oportunidades de mejora
 
 1. Formulario de contacto sin backend
+
 - Estado actual: demo local.
 - Mejora sugerida: integrar endpoint (serverless o servicio SMTP/API).
 
 2. Datos hardcodeados
+
 - Experiencia, proyectos y contacto estan en arreglos locales.
 - Mejora sugerida: mover contenido a JSON/CMS o archivo de config unico.
 
 3. Mezcla de estilos inline + utilities
+
 - Facilita velocidad, pero dificulta mantenimiento en escala.
 - Mejora sugerida: extraer tokens y clases reutilizables.
 
 4. Dependencias no usadas en superficie actual
+
 - El proyecto instala muchas librerias que no se reflejan en esta landing.
 - Mejora sugerida: auditar y reducir bundle/dependencias.
 
 5. Calidad de enlaces de contacto
+
 - Conviene revisar periodicamente URLs y mailto para evitar links rotos.
 
 ## Requisitos
