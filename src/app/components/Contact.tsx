@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   MessageSquare,
@@ -16,7 +17,7 @@ const contactInfo = [
     icon: Mail,
     label: "Email",
     value: "ojeafabian66@gmail.com",
-    href: "mailto:ojeafabian66@gmail",
+    href: "mailto:ojeafabian66@gmail.com",
     color: "#8b5cf6",
   },
   {
@@ -30,7 +31,7 @@ const contactInfo = [
     icon: Linkedin,
     label: "LinkedIn",
     value: "linkedin.com/in/fabianbello",
-    href: "https://linkedin.com",
+    href: "https://linkedin.com/in/fabianbello",
     color: "#a855f7",
   },
   {
@@ -58,6 +59,7 @@ export function Contact() {
   });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -68,10 +70,43 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1200));
-    setLoading(false);
-    setSent(true);
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setErrorMessage("");
+
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error("EmailJS environment variables are missing.");
+      }
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          reply_to: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: "Fabian",
+        },
+        {
+          publicKey,
+        },
+      );
+
+      setSent(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error(error);
+      setErrorMessage(
+        "No se pudo enviar el mensaje. Intenta de nuevo en unos minutos.",
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -377,6 +412,12 @@ export function Contact() {
                       </>
                     )}
                   </button>
+
+                  {errorMessage && (
+                    <p style={{ color: "#fca5a5", fontSize: "0.82rem" }}>
+                      {errorMessage}
+                    </p>
+                  )}
                 </form>
               )}
             </div>
