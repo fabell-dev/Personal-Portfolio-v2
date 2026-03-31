@@ -1,5 +1,7 @@
 # Responsive Portfolio Design
 
+![Descripción](src/public/images/portfolio.png)
+
 Portfolio personal de una sola pagina construido con React + Vite + TypeScript.
 El proyecto presenta una experiencia moderna con scroll suave, secciones modulares, animaciones con Motion y estilo visual consistente.
 
